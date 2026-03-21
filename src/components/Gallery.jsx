@@ -41,7 +41,7 @@ export default function Gallery() {
   ]
 
   return (
-    <section ref={containerRef} className="py-12 w-full overflow-hidden bg-transparent relative z-20">
+    <section ref={containerRef} className="py-8 md:py-12 w-full overflow-hidden bg-transparent relative z-20">
 
       {/* Client Logos - Scroll Synced & Tilted Wrapper */}
       <div 
@@ -104,7 +104,7 @@ export default function Gallery() {
       </div>
 
       {/* Scrolling Image Gallery Wrapper */}
-      <div className="flex flex-col gap-12 md:gap-16 px-4 w-[250vw] md:w-[180vw] py-16 overflow-visible">
+      <div className="flex flex-col gap-8 md:gap-12 lg:gap-16 px-2 md:px-4 w-[350vw] sm:w-[300vw] md:w-[250vw] lg:w-[180vw] py-12 md:py-16 overflow-visible">
         
         {/* Row 1 - Sliding Left (Tilted) */}
         <motion.div 

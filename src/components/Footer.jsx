@@ -5,13 +5,13 @@ export default function Footer() {
         
         <div className="relative">
            <h2 
-             className="text-[6rem] md:text-[10rem] lg:text-[12rem] xl:text-[15rem] font-black uppercase leading-[0.8] tracking-widest text-transparent select-none relative z-10" 
+             className="text-[4rem] sm:text-[6rem] md:text-[10rem] lg:text-[12rem] xl:text-[15rem] font-black uppercase leading-[0.8] tracking-widest text-transparent select-none relative z-10" 
              style={{ WebkitTextStroke: '2px rgba(255,255,255,0.7)', fontFamily: 'monospace' }}
            >
              AYUSH
            </h2>
            <h2 
-             className="text-[6rem] md:text-[10rem] lg:text-[12rem] xl:text-[15rem] font-black uppercase leading-[0.8] tracking-widest text-transparent select-none absolute top-[10px] left-[10px] z-0" 
+             className="text-[4rem] sm:text-[6rem] md:text-[10rem] lg:text-[12rem] xl:text-[15rem] font-black uppercase leading-[0.8] tracking-widest text-transparent select-none absolute top-[10px] left-[10px] z-0" 
              style={{ WebkitTextStroke: '1px rgba(255,255,255,0.2)', fontFamily: 'monospace' }}
            >
              AYUSH
