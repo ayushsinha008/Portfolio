@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#a2f31f",
+              "secondary-container": "#426900",
+              "on-tertiary": "#400040",
+              "secondary-fixed": "#a2f31f",
+              "on-secondary-container": "#ebffcb",
+              "on-surface-variant": "#adaaaa",
+              "primary": "#a1faff",
+              "surface-container": "#1a1919",
+              "background": "#0e0e0e",
+              "tertiary-dim": "#ff51fa",
+              "surface": "#0e0e0e",
+              "primary-fixed": "#00f4fe",
+              "surface-container-lowest": "#000000",
+              "error-container": "#9f0519",
+              "inverse-primary": "#006a6e",
+              "on-error-container": "#ffa8a3",
+              "primary-container": "#00f4fe",
+              "on-tertiary-container": "#230023",
+              "tertiary-container": "#fe00fe",
+              "on-secondary": "#365700",
+              "surface-container-highest": "#262626",
+              "on-surface": "#ffffff",
+              "primary-fixed-dim": "#00e5ee",
+              "surface-container-low": "#131313",
+              "on-primary-fixed-variant": "#006266",
+              "surface-container-high": "#201f1f",
+              "on-primary": "#006165",
+              "error": "#ff716c",
+              "surface-variant": "#262626",
+              "on-background": "#ffffff",
+              "tertiary": "#ff51fa",
+              "secondary-fixed-dim": "#95e400",
+              "inverse-surface": "#fcf8f8",
+              "surface-tint": "#a1faff",
+              "surface-bright": "#2c2c2c",
+              "on-error": "#490006",
+              "outline-variant": "#494847",
+              "tertiary-fixed-dim": "#ff61f8",
+              "on-tertiary-fixed-variant": "#6a006a",
+              "secondary-dim": "#95e400",
+              "on-secondary-fixed": "#294300",
+              "error-dim": "#d7383b",
+              "inverse-on-surface": "#565554",
+              "on-tertiary-fixed": "#320032",
+              "surface-dim": "#0e0e0e",
+              "outline": "#777575",
+              "primary-dim": "#00e5ee",
+              "tertiary-fixed": "#ff81f5",
+              "on-secondary-fixed-variant": "#3d6200",
+              "on-primary-fixed": "#004346",
+              "on-primary-container": "#00575b"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .specimen-card:hover .glow-effect {
+            opacity: 1;
+        }
+        .glass-panel {
+            background: rgba(38, 38, 38, 0.2);
+            backdrop-filter: blur(24px);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0e0e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #494847;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0e]/80 backdrop-blur-xl border-b border-[#494847]/15 flex items-center justify-between px-6 h-16 w-full shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-3 text-[#00F5FF]">
+<span class="material-symbols-outlined text-2xl">blur_on</span>
+<h1 class="font-['Space_Grotesk'] text-xl font-bold tracking-[0.2em] uppercase drop-shadow-[0_0_8px_rgba(0,245,255,0.4)]">SYNTHETIC_PULSE</h1>
+</div>
+<div class="flex items-center gap-4 text-[#adaaaa]">
+<span class="material-symbols-outlined hover:text-[#a1faff] transition-colors duration-300 cursor-pointer">sensors</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Section Header -->
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<span class="font-label text-xs tracking-[0.3em] text-secondary uppercase">Archive // 001</span>
+<h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface">SPECIMENS</h2>
+</div>
+<div class="font-label text-sm text-on-surface-variant flex items-center gap-8 border-l border-outline-variant/30 pl-8 h-fit">
+<div>
+<p class="text-[10px] uppercase tracking-widest opacity-50">Luminance</p>
+<p class="font-bold text-primary">STABLE</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest opacity-50">Render Type</p>
+<p class="font-bold">VOLUMETRIC</p>
+</div>
+</div>
+</div>
+<!-- Bento Gallery Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Asset 1: Large Feature -->
+<div class="md:col-span-8 group specimen-card relative overflow-hidden bg-surface-container-low rounded-lg p-1">
+<div class="relative h-[500px] w-full bg-surface-container-lowest overflow-hidden rounded-md border border-outline-variant/10">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Intricate golden circuit board with glowing blue gears" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDn7wfHX0wWZsQQF9Mjir--Qe2nUvFxh7_wvszzihsAuqu9KY9GQsZtcwARBzzxXAfRnzztfpmYbjs2mEJZ_1hi7D8akgGg85FuRTOuMA-Zj8QKXmGlNpvvhHrnhzZrdlo1Rk-pJJmsnWJ03KpKv9Nt764hiS17TV0a2mj18etk7cAmflSWaAHI-z_HC4s7VfX51SLhWtKys1pD_N1hBymqjmPkYsoaCigJYiPmhsB68Tdj1Aga3yue5QdrEJaJEPMCCgIgOWMSQyD"/>
+<div class="absolute bottom-8 left-8 z-20">
+<p class="font-label text-xs tracking-widest text-primary mb-2">IDENTIFIER: X-091</p>
+<h3 class="font-headline text-4xl font-bold tracking-tight">Protocol: Synapse</h3>
+</div>
+<div class="absolute top-8 right-8 z-20 flex gap-2">
+<span class="px-3 py-1 bg-primary/10 backdrop-blur-md rounded-full font-label text-[10px] text-primary border border-primary/20">MECHANICAL</span>
+</div>
+<div class="glow-effect absolute inset-0 bg-primary/5 opacity-0 transition-opacity duration-500 pointer-events-none"></div>
+</div>
+</div>
+<!-- Asset 2: Tall Sidebar -->
+<div class="md:col-span-4 group specimen-card relative overflow-hidden bg-surface-container-low rounded-lg p-1">
+<div class="relative h-full min-h-[500px] w-full bg-surface-container-lowest overflow-hidden rounded-md border border-outline-variant/10">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-1000" data-alt="Glowing crystal sphere encased in an orange neon cube" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2c4pnEbwwAaj87QX3_LlKvJ6HeFLixPm6k2WAJrul5Jv2BYjEa1NGOhOosq-3wJayDqZxoPXWh0_I-u5eYAd1U1MFJf01EN28BVrmttkqvVBrTkXzidasO-PzeHsMbHm6iXDtaabP7hcwhMWWOhBYtqYbdVbCvdlGE8KoFkLf10M7qiS-LxE0bkggGGCrQy5fWQTOaC1C4E-uQCoZBXcdXZ-H881hn3XKmX3seooBiZbNxwHNWtjME9EiHPfbfR3IuspFJkYJ4VTs"/>
+<div class="absolute bottom-8 left-8 z-20">
+<p class="font-label text-xs tracking-widest text-secondary mb-2">IDENTIFIER: G-442</p>
+<h3 class="font-headline text-3xl font-bold tracking-tight">Data Core</h3>
+</div>
+<div class="glow-effect absolute inset-0 bg-secondary/5 opacity-0 transition-opacity duration-500 pointer-events-none"></div>
+</div>
+</div>
+<!-- Asset 3: Horizontal Bottom -->
+<div class="md:col-span-5 group specimen-card relative overflow-hidden bg-surface-container-low rounded-lg p-1">
+<div class="relative h-[350px] w-full bg-surface-container-lowest overflow-hidden rounded-md border border-outline-variant/10">
+<div class="absolute inset-0 bg-gradient-to-br from-background/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-60 group-hover:rotate-1 transition-transform duration-500" data-alt="Polished obsidian geometric shapes with neon lime light edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0LEApGlGENcsUMFQkoE07V8OkAWD4_c40uyyJASEChKFhhNgHI2k6nHmewaeMUi8EQqu7EraoacwHODv-xPNAP2gLJl59ukhTEAIWZdjieaPEYyYRPOPbOXvsZgx4oK4cNAxkS0r9kO_EC4YSqTxcHjDxMZ5qHXPnXpja1hKylpfN2gfC2et1XPKJq8wvmmarskTg1KM4c5yg3YD3zIediuEG_xiULvRP3r84NK2vUcQdfple88TL4-OFvw7tZ8ihOr-uUnL8RC4E"/>
+<div class="absolute top-8 left-8 z-20">
+<p class="font-label text-xs tracking-widest text-on-surface-variant mb-2">REF: DARK_MATTER</p>
+<h3 class="font-headline text-3xl font-bold tracking-tight">Fragment: Obsidian</h3>
+</div>
+</div>
+</div>
+<!-- Asset 4: Final High Contrast -->
+<div class="md:col-span-7 group specimen-card relative overflow-hidden bg-surface-container-low rounded-lg p-1">
+<div class="relative h-[350px] w-full bg-surface-container-lowest overflow-hidden rounded-md border border-outline-variant/10">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-80 group-hover:brightness-125 transition-all duration-700" data-alt="Pulsing bio-organic heart with synthetic neural fibers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs3JRTTn-r0pkx7SUyQdrtHhbnqpi5jpzrcVjvO_qd1D2DABU4HLyUOGTZZqfF1wNv27kF1xOZhcvKX-_Q9WqcllhX1vEAWFivQ-4FQWegY1BVIKqGNRIhaR5MDW28WIg-uhXFstJzb0sOmSV2RLYDPZPG65OBpgoASrzWI-w0FkAusasGnOZzLzSCFy-NURIbsjWuac1JmfUwedex4YP0YCCEYpDeXWYBVYPlUZ7skVW-VX0FKnBLZPB9lNaDTfxngEgUfSgv6wYM"/>
+<div class="absolute bottom-8 left-8 z-20">
+<p class="font-label text-xs tracking-widest text-tertiary mb-2">LIVE FEED // ACT_00</p>
+<h3 class="font-headline text-3xl font-bold tracking-tight">Neural Pulse</h3>
+</div>
+<div class="absolute top-8 right-8 z-20">
+<span class="flex items-center gap-2 px-3 py-1 bg-error/10 border border-error/20 rounded-full font-label text-[10px] text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                            BIOLOGICAL
+                        </span>
+</div>
+<div class="glow-effect absolute inset-0 bg-tertiary/5 opacity-0 transition-opacity duration-500 pointer-events-none"></div>
+</div>
+</div>
+</div>
+<!-- Technical Metadata Footer -->
+<div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-6 bg-surface-container rounded-lg border border-outline-variant/5">
+<p class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase mb-4">Transfer Rate</p>
+<p class="font-headline text-2xl text-primary">8.4 GB/s</p>
+</div>
+<div class="p-6 bg-surface-container rounded-lg border border-outline-variant/5">
+<p class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase mb-4">Neural Link</p>
+<p class="font-headline text-2xl text-secondary">ACTIVE</p>
+</div>
+<div class="p-6 bg-surface-container rounded-lg border border-outline-variant/5">
+<p class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase mb-4">Encryption</p>
+<p class="font-headline text-2xl">AES-512</p>
+</div>
+<div class="p-6 bg-surface-container rounded-lg border border-outline-variant/5">
+<p class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase mb-4">Specimens</p>
+<p class="font-headline text-2xl text-tertiary">4 / 1024</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-8 pb-safe bg-[#0e0e0e]/90 backdrop-blur-2xl border-t border-[#494847]/15 z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
+<a class="flex items-center justify-center bg-[#00F5FF]/10 text-[#00F5FF] rounded-full p-3 shadow-[0_0_15px_rgba(0,245,255,0.2)] scale-110 duration-200" href="#">
+<span class="material-symbols-outlined">view_in_ar</span>
+</a>
+<a class="flex items-center justify-center text-[#adaaaa] p-3 hover:bg-[#262626] hover:text-[#00F5FF] transition-all duration-500" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+</a>
+<a class="flex items-center justify-center text-[#adaaaa] p-3 hover:bg-[#262626] hover:text-[#00F5FF] transition-all duration-500" href="#">
+<span class="material-symbols-outlined">layers</span>
+</a>
+<a class="flex items-center justify-center text-[#adaaaa] p-3 hover:bg-[#262626] hover:text-[#00F5FF] transition-all duration-500" href="#">
+<span class="material-symbols-outlined">settings_input_component</span>
+</a>
+</nav>
+</body></html>

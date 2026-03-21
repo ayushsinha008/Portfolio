@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#0e0e13",
+              "on-background": "#f8f5fd",
+              "secondary": "#00eefc",
+              "inverse-surface": "#fbf8ff",
+              "on-secondary": "#005359",
+              "tertiary-fixed-dim": "#ff769e",
+              "tertiary-fixed": "#ff8eac",
+              "inverse-on-surface": "#55545a",
+              "on-tertiary": "#47001d",
+              "on-primary-fixed": "#000000",
+              "tertiary-container": "#fc0078",
+              "on-tertiary-container": "#000000",
+              "error-dim": "#d73357",
+              "primary-container": "#d878ff",
+              "surface-container-lowest": "#000000",
+              "secondary-fixed-dim": "#00deec",
+              "primary": "#df8eff",
+              "outline-variant": "#48474d",
+              "on-tertiary-fixed": "#380015",
+              "on-primary": "#4f006d",
+              "on-secondary-fixed-variant": "#005e64",
+              "on-secondary-fixed": "#003f43",
+              "secondary-dim": "#00deec",
+              "surface-bright": "#2c2b33",
+              "tertiary-dim": "#e4006c",
+              "outline": "#76747b",
+              "surface-tint": "#df8eff",
+              "surface-dim": "#0e0e13",
+              "on-error": "#490013",
+              "error-container": "#a70138",
+              "secondary-fixed": "#00eefc",
+              "surface-variant": "#25252c",
+              "on-surface": "#f8f5fd",
+              "surface-container-highest": "#25252c",
+              "on-primary-container": "#3d0055",
+              "secondary-container": "#006970",
+              "tertiary": "#ff6b98",
+              "on-tertiary-fixed-variant": "#760035",
+              "error": "#ff6e84",
+              "on-surface-variant": "#acaab1",
+              "background": "#0e0e13",
+              "surface-container": "#19191f",
+              "primary-fixed": "#d878ff",
+              "on-error-container": "#ffb2b9",
+              "surface-container-high": "#1f1f26",
+              "surface-container-low": "#131318",
+              "primary-fixed-dim": "#d061ff",
+              "primary-dim": "#bb00fc",
+              "on-primary-fixed-variant": "#4b0068",
+              "inverse-primary": "#9a00d0",
+              "on-secondary-container": "#e3fdff"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(31, 31, 38, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(223, 142, 255, 0.05);
+        }
+        .inner-glow {
+            box-shadow: inset 1px 1px 0px 0px rgba(208, 97, 255, 0.2);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0e0e13; }
+        ::-webkit-scrollbar-thumb { background: #48474d; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-background font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-zinc-950/60 backdrop-blur-xl border-b border-white/5 shadow-[0_1px_20px_rgba(223,142,255,0.05)] flex items-center justify-between px-6 h-20">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-fuchsia-400">menu</span>
+</button>
+<span class="text-2xl font-bold tracking-tighter text-fuchsia-500 font-headline">MacroLume</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-headline font-medium text-fuchsia-400 transition-colors" href="#">Gallery</a>
+<a class="font-headline font-medium text-zinc-400 hover:bg-white/10 px-3 py-1 rounded-lg transition-colors" href="#">Collections</a>
+<a class="font-headline font-medium text-zinc-400 hover:bg-white/10 px-3 py-1 rounded-lg transition-colors" href="#">Artists</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-zinc-400">search</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary p-[1px]">
+<div class="w-full h-full rounded-full bg-surface-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar small round" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYYC4fPc3bctfK-fjqFG9omrAhleK0CujhNtohaoTaAHUG26s3Pjld34WC58U_W37mcUIqqE1ud3o3bnpKzKMUMqDQ6Fggy7kQDZXRpRPNbSvxlbVwL8C_ezGgM00hJQQinYZs44nFOrpKaLMcO1JnJs2FFPaIC_3vItIIvYDMfGIIuLYzi3hZY6FP_DyRdFZ5XXca2jXdg7CS7i4-n8tlPMP3Niy7-7PvNuU9m40NnFKUPRciXZ6F76zdvvNg3a0yCswZxfuenJfs"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-16">
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
+                Details <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary-container">Beyond</span> Perception.
+            </h1>
+<p class="text-on-surface-variant max-w-2xl text-lg md:text-xl font-light leading-relaxed">
+                Explore the unseen universe through high-fidelity macro photography. A curated sanctuary of botanical textures and iridescent nature.
+            </p>
+</header>
+<!-- Featured Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Feature -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-lg bg-surface-container-high inner-glow h-[500px] transition-all hover:scale-[1.01]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Macro close up of white daisy on soft peach background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlcqJegndsriU7mt29lGkQZfm_nczx3DnzSxLKTGahdtX2sOo55IFX18-obtyLJWDpY_f8oNO_8MK0_HnjFZNC4VpPQKES-7FkLB3ANS7S991bwm6nmMfrjpe6fBWfbxBNRX5Q3NJcZXY24IkzbeYMHbVTlejNa8AMpjQQpkYWgZIhCRO0jBS0YuqVDFKa9TE67YvoDN2IhgllXp0vdPuAJCmvIcpAnABuX-to4tchKc2SsFQSB_w_OS-69U7GAp1yZh1Gd0FY8pvt"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-sm text-[10px] uppercase tracking-widest font-bold">Featured Art</span>
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-sm text-[10px] uppercase tracking-widest font-bold">New Release</span>
+</div>
+<h3 class="font-headline text-3xl font-bold text-white mb-2">The Ethereal Daisy</h3>
+<p class="text-zinc-300 text-sm max-w-md">Captured at 5x magnification, revealing the geometric perfection of the central florets.</p>
+</div>
+</div>
+<!-- Side Card 1 -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-lg bg-surface-container-high inner-glow h-[500px] transition-all hover:scale-[1.02]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Vibrant tropical leaf with dew drops macro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_Y4GmhSj2usJ9eyShM9-ks7Oe7XnQx46ckBh_0I68T4hiTYEeDKcdH1sNzdFVo4MDUYCazFfsiPar0MHEg9avx1ZhA3EBSuMwvraZ-AaMlFtc3cOlIW4hD28Onq16cnvDz7FCFxCVXXbyW29wTsPFR2PkmcsV-zVcsAT7osS9jAkduotYMDIAYC1Kwah48RtHqHWwdiyBEaO1ZDofZILr4X69muJ2SJoxFGEweYjGbLRCTeCZ4LjIr8Z_Q7AHrZkk2fOIqUcIV1Jl"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline text-2xl font-bold text-white mb-1">Chlorophyll Pulse</h3>
+<p class="text-zinc-400 text-xs uppercase tracking-widest">Botanical Series 04</p>
+</div>
+</div>
+<!-- Small Cards Row -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-lg bg-surface-container-high inner-glow h-[300px] transition-all hover:scale-[1.02]">
+<img class="w-full h-full object-cover" data-alt="Macro of yellow flower petals texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEw_p6tGtGqS1uBXSXlVSHnnV6bFSrg2TnXYZ7c2XMAR4MoqHQFBBXGVZxVj6Cv9WfFsv2RAEGHTz_pA51kRwZ_0l61NZu7CBTR10smF56U5WVTFPR8jGf8NyBjuhnnDKjm6R0_lc7hZpTmeG4P1dJRU08dRhKpe5FN7hBtQRMHk035LSMS_PPmUs-Q8PQE8WO9EjkgjIUcPcVXficET3Eh-5tWp5Ya9qHeJLaCSraTVnlgYQ8O1xYZRe0TmmZErGl5arScBOuiKHL"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden rounded-lg bg-surface-container-high inner-glow h-[300px] transition-all hover:scale-[1.02]">
+<img class="w-full h-full object-cover" data-alt="Purple lavender macro with soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHjbWqtZbqXWFBkniUkEGHI8LHAY4NZ4k-2FdEKAm6h49I4m7pRCsp14yaoRwJgp7H5B2vAWIUf6g3fMwQVqvjM_ijmi8RKvH4WLaQ_5FrjMY5_E4I5JjpbYQS4-3C-WVhTy7MG23KCmv9VyjQ2lAC6MIdJqHrArJ-d8KqlV7dPTT07Mr6G3U3BYhyHETkg7jRx-mivvUamYeXbioMjADv6KhxV8BGCcHh6wV5gr4Z-7gA60kW0SWRH52eGKTT1idnW5VC3Xk-amIf"/>
+<div class="absolute inset-0 bg-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden rounded-lg bg-surface-container-high inner-glow h-[300px] transition-all hover:scale-[1.02]">
+<div class="w-full h-full bg-surface-container-lowest flex flex-col items-center justify-center p-8 text-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h4 class="font-headline text-xl font-bold mb-2">Join the Creator Circle</h4>
+<p class="text-on-surface-variant text-sm mb-6">Submit your macro captures and get featured in the gallery.</p>
+<button class="px-6 py-2 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold text-sm tracking-tight transition-transform active:scale-95">Explore Submissions</button>
+</div>
+</div>
+</section>
+<!-- Asymmetric Detail Section -->
+<section class="mt-32 flex flex-col md:flex-row items-center gap-12 md:gap-24">
+<div class="w-full md:w-1/2 ml-0 md:ml-12">
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/20 blur-3xl rounded-full"></div>
+<img class="rounded-lg w-full aspect-square object-cover shadow-2xl relative z-10 border border-white/5" data-alt="Abstract pink flower macro crystalline structure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEaqNswNqibrHZJpfOaVyHxyHdQlnODGFKVou_BbTfNoAkGIs0YN6g5asp8ubl6PiB_1M0ydswWOX-JuYJHOYfYszqsW-LpfzN4DzY8lgjx56ZRe6IOumF0xDA2AC-xPC7XD0rth2fsWbaqUCBKN742bBxQ5Xy3wz6VXeVpnEmtslxlWfcznETPSjX919fqh6qhXn2f_2EVq4HdaNWjqbsEVqQsJbaMpOvNT65goEreNZwxgACIz9tGGSIX0RS6VamoGwjXMYR52u1"/>
+</div>
+</div>
+<div class="w-full md:w-1/2 mr-0 md:mr-16">
+<span class="text-secondary font-bold text-[12px] uppercase tracking-[0.3em] block mb-4">Technical Precision</span>
+<h2 class="font-headline text-4xl font-bold mb-6">Hyper-Reflective <br/>Crystalline Flora</h2>
+<p class="text-on-surface-variant leading-loose mb-8">
+                    Our lenses capture light at the diffraction limit. Every pixel is optimized for deep-blacks and HDR luminance, ensuring that the natural iridescence of floral structures is preserved in its purest digital form.
+                </p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<div class="text-3xl font-headline font-bold text-white mb-1">8K</div>
+<div class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">Native Resolution</div>
+</div>
+<div>
+<div class="text-3xl font-headline font-bold text-white mb-1">10bit</div>
+<div class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">Color Depth</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-24 bg-zinc-950/60 backdrop-blur-2xl flex justify-around items-center px-8 pb-4 z-50 rounded-t-[2.5rem] shadow-[0_-8px_40px_rgba(0,0,0,0.8)]">
+<button class="flex items-center justify-center bg-fuchsia-500/20 text-fuchsia-300 rounded-full w-14 h-14 shadow-[0_0_20px_rgba(223,142,255,0.3)] active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+</button>
+<button class="flex items-center justify-center text-zinc-500 w-14 h-14 hover:text-fuchsia-200 transition-all active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex items-center justify-center text-zinc-500 w-14 h-14 hover:text-fuchsia-200 transition-all active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined">auto_awesome</span>
+</button>
+<button class="flex items-center justify-center text-zinc-500 w-14 h-14 hover:text-fuchsia-200 transition-all active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+<!-- Floating Action Button (Home State Only) -->
+<button class="fixed bottom-32 md:bottom-12 right-6 md:right-12 w-16 h-16 bg-gradient-to-tr from-primary to-primary-container text-on-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(223,142,255,0.4)] active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl">add_a_photo</span>
+</button>
+</body></html>

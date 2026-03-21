@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#b9cacb",
+              "error-container": "#93000a",
+              "surface-container-lowest": "#0e0e10",
+              "outline": "#849495",
+              "surface-container": "#201f21",
+              "on-primary-fixed": "#380038",
+              "surface-container-highest": "#353437",
+              "primary": "#fff3f9",
+              "on-surface": "#e5e1e4",
+              "tertiary-fixed-dim": "#2ae500",
+              "secondary-fixed-dim": "#00dbe9",
+              "on-background": "#e5e1e4",
+              "on-error-container": "#ffdad6",
+              "secondary-container": "#00eefc",
+              "background": "#131315",
+              "on-secondary-fixed-variant": "#004f54",
+              "tertiary-fixed": "#79ff5b",
+              "inverse-on-surface": "#313032",
+              "primary-fixed-dim": "#ffabf3",
+              "primary-fixed": "#ffd7f5",
+              "on-error": "#690005",
+              "surface-bright": "#39393b",
+              "primary-container": "#ffc9f4",
+              "on-secondary": "#00363a",
+              "on-tertiary-fixed-variant": "#095300",
+              "surface-variant": "#353437",
+              "on-tertiary-container": "#106e00",
+              "secondary-fixed": "#7df4ff",
+              "secondary": "#d3fbff",
+              "on-primary-container": "#a900a9",
+              "surface-dim": "#131315",
+              "inverse-surface": "#e5e1e4",
+              "surface-tint": "#ffabf3",
+              "outline-variant": "#3b494b",
+              "surface": "#131315",
+              "tertiary-container": "#33fb0a",
+              "surface-container-low": "#1c1b1d",
+              "on-secondary-container": "#00686f",
+              "error": "#ffb4ab",
+              "on-secondary-fixed": "#002022",
+              "tertiary": "#e1ffd1",
+              "on-primary": "#5b005b",
+              "on-tertiary": "#053900",
+              "surface-container-high": "#2a2a2c",
+              "on-primary-fixed-variant": "#810081",
+              "on-tertiary-fixed": "#022100",
+              "inverse-primary": "#a900a9"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Space Grotesk"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(53, 52, 55, 0.4);
+        backdrop-filter: blur(16px);
+      }
+      .glow-pink { box-shadow: 0 0 15px rgba(255, 171, 243, 0.2); }
+      .glow-cyan { box-shadow: 0 0 15px rgba(0, 219, 233, 0.2); }
+      .glow-green { box-shadow: 0 0 15px rgba(42, 229, 0, 0.2); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-xl bg-gradient-to-b from-black/80 to-transparent shadow-[0_0_20px_rgba(0,240,255,0.1)] flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-cyan-400 scale-95 active:scale-90 transition-all cursor-pointer">grid_view</span>
+<h1 class="font-headline tracking-widest text-lg uppercase text-cyan-400 font-bold">BIO-DIGITAL</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-cyan-400 drop-shadow-[0_0_8px_rgba(0,240,255,0.8)] font-headline text-sm uppercase tracking-wider" href="#">Gallery</a>
+<a class="text-slate-500 hover:text-cyan-200 transition-all duration-300 font-headline text-sm uppercase tracking-wider" href="#">Evolution</a>
+<a class="text-slate-500 hover:text-cyan-200 transition-all duration-300 font-headline text-sm uppercase tracking-wider" href="#">Neural Hub</a>
+</nav>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-cyan-400 scale-95 active:scale-90 transition-all cursor-pointer">sensors</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto min-h-screen">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-secondary-fixed-dim font-label text-xs tracking-[0.2em] uppercase block mb-2">Exhibition v1.0</span>
+<h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tight text-on-surface leading-none">Cyber-Organic Gallery</h2>
+</div>
+<div class="max-w-xs">
+<p class="text-on-surface-variant body-lg leading-relaxed">Exploring the synthesis of living tissue and silicon-based logic through macro visualization.</p>
+</div>
+</div>
+</section>
+<!-- Gallery Section: Synthetic Life -->
+<section class="mb-12">
+<div class="flex items-center gap-4 mb-8">
+<h3 class="font-headline text-2xl font-semibold text-primary">Synthetic Life</h3>
+<div class="h-[1px] flex-grow bg-outline-variant opacity-30"></div>
+<span class="text-tertiary-fixed font-label text-xs uppercase tracking-widest">Active Sequence</span>
+</div>
+<!-- Bento Grid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+<!-- Render 1: Neural Pulse -->
+<div class="md:col-span-8 md:row-span-2 glass-card rounded-xl overflow-hidden group border border-primary-fixed-dim/10 glow-pink relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80" data-alt="Macro 3D translucent organic blob with neon pink circuits" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ6ezCA7rOTv_FSKc6nqflin4Skzvrugb_7RqwvjkBI7Mj_EL5hVSYIsOBuChkg016u3MqrWNS-XskIx3IlUvN6wEBk6f9c8qi3tEa1cWASpxJewc7MHgQcJhKVi19YhK2Pwi5SO9Xna_t6Yre0g5nr3-jQYwN1eIkfhJtINJvrOI55tcqzFPpr7vbIgEmxqvwykj0qlDlNGIHnqt9u1Wb-hJBl9orLcqJCqk70Dxhfn9i1dLB_Bx_eG5qq0UfBRvKAMY_QPH9gzZT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<h4 class="font-headline text-3xl font-bold text-primary-fixed mb-2">Neural Pulse</h4>
+<p class="text-on-surface-variant max-w-md">Bio-luminescent synaptic firing captured in a suspended crystalline state.</p>
+</div>
+</div>
+<!-- Render 2: Luminous Core -->
+<div class="md:col-span-4 md:row-span-1 glass-card rounded-xl overflow-hidden group border border-secondary-fixed-dim/10 glow-cyan relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70" data-alt="Translucent blue organic form with glowing microchips" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNA6wdCL_qf48jl0C0uspa5NKQ-b4pdwGZlALoVA2tVTD9xAmEZpAlwa-vqwhAEKU7COqzRg4jTtCt_E1E3jFAzN0A6FqZkqeM3EE-2SQmdLkOtdLD8QT_3yQONgLzU5iJMfHbOoHH0RLUTikm2vaBvyoyaDNlpq1Ft9HSaoBqoQZWBlHD95yocPHxCFGuWkOcJC3RidP6emoETGTuOaU-Lt0E8uw25GKNHmf6DLJ3gpVusOD3AudeUPt6pWndhTd52tYRDovYzI3c"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
+<div class="absolute bottom-4 left-6">
+<h4 class="font-headline text-xl font-bold text-secondary-fixed">Luminous Core</h4>
+</div>
+</div>
+<!-- Render 3: Circuit Flow -->
+<div class="md:col-span-4 md:row-span-1 glass-card rounded-xl overflow-hidden group border border-tertiary-fixed-dim/10 glow-green relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70" data-alt="Toxic green glowing wires inside fluid organic sphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDk6qAPPy60hqB_7n8TmJCkw-x7JLj28QLl-wDbpGHufX6yZydjxaxQsJq_KB02_gHUC9WdiJY0VBDt2HOP5xPucdPjsw9bRtimdLG1DJ3aHVRnnno5g9R-HMAdWWfX-JnYm-zVpjlkqUMIHgdvmFqCC4UgZ4oEoc45DRrlBZSKT-49K2xuuLOu4AkZ1ncxa6gk6HtXavlONU1VQPhNv4-MQ_TA0x6Ju23Ulb9uDz8K1AJ8Tr0V1aECMAI4l0xiVjGbw7wahcLb-Us"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
+<div class="absolute bottom-4 left-6">
+<h4 class="font-headline text-xl font-bold text-tertiary-fixed">Circuit Flow</h4>
+</div>
+</div>
+<!-- Render 4: Neon Membrane -->
+<div class="md:col-span-4 md:row-span-2 glass-card rounded-xl overflow-hidden group border border-primary-fixed-dim/10 glow-pink relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70" data-alt="Pink and purple bioluminescent organic texture with wires" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPfa-gxKqDrSgt2IK3_ehbEHdzYcFWE9ZWjpoGQqI7JK02Qe4H5uDFpfW7S8lMJIPFTOPpBMocjLgVCAyi_rFgf50JPtUoX5C2yXtTXf588jTctDgAg69qyAkK6mF2_t3J0Vxk2IoPVq7koKG6bKvpNaGOhtjZXH5EJxGVNwymhw7Oe_ctUvSL4-Q_GhUgm4EXIavvTqltTWRgY2yks5rlm_IpbyR1s_iINQEsVRBdBmUKWaUasokUpbP9g5u_MvEDClYgUiDC2pUF"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/90"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="font-headline text-2xl font-bold text-primary-fixed mb-2">Neon Membrane</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Protocol-7X Active</p>
+</div>
+</div>
+<!-- Render 5: Kinetic Sinew -->
+<div class="md:col-span-4 md:row-span-1 glass-card rounded-xl overflow-hidden group border border-secondary-fixed-dim/10 glow-cyan relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70" data-alt="Abstract cybernetic organic muscle fibers in blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_yqPeRJgQx1i2OOjB_i3veWglyCeuDCHlfiWJa-83xC8ss6r1ny3ULRZpLunEUUFqFSfBgXo13BiC7HymKospBzLbd6jlSE94k9wDgxbO1_BTBJ9wYVrUBGN6u8b5hOrV2qK4OGjUItjZNAwFUlYjFbtxoSZi1ahCLXS06bA_JhEMDqrrSdzJbKb7d_vrRkfZqX4h6mmw684lLdtCbMwxSUfEPcN1wnjVg9xM-s5JM0Un_Lwa5r_pDC-YmIwbk6ZW_focgZNPhR5B"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute bottom-4 left-6">
+<h4 class="font-headline text-xl font-bold text-secondary-fixed">Kinetic Sinew</h4>
+</div>
+</div>
+<!-- Render 6: Digital Osmosis -->
+<div class="md:col-span-4 md:row-span-1 glass-card rounded-xl overflow-hidden group border border-tertiary-fixed-dim/10 glow-green relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70" data-alt="Deep green organic matter fusing with digital pixels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz6tjA6RLqf2Ax5e3pUk1va2oomqwqhR6Dj1KFpr-IFQIZnPAGqwLKfLL3HnuQlLExt5Y1BYTRuItmDScC8Vj6RlIdJ8StzH3QSDry5DKy-2v-q2T1HfDhsar3apSavdRuz9P-us2hyJuNeom1u1gWRG_ddT_m4lvCMaDyAbaSzSC6kmsuKsR1Britv3dLN2rmyVV5Re3MbQMYABinpKkHKFb8FeIhyguFrwo-jmxxwtI72FmwtvVdnJEzpl5aS-4C8MZ-ka7lHzOO"/>
+<div class="absolute bottom-4 left-6">
+<h4 class="font-headline text-xl font-bold text-tertiary-fixed">Digital Osmosis</h4>
+</div>
+</div>
+<!-- Render 7: Obsidian Logic -->
+<div class="md:col-span-12 md:row-span-1 glass-card rounded-xl overflow-hidden group border border-outline-variant/20 relative flex items-center">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-1000" data-alt="Dark obsidian background with subtle glowing cybernetic lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuUme1ZsmNXp-20mxc4Dfbi6BE0_hEuf9FHk2m0RSY-v2R6s2o8J85_CGT9q7tkp-w7H2jJMOHrC7gejzhgmivT6IH2gt51zsrVPHZQueuM4EY9wMjYPmYkqJQimCtfKeDbxFZxwyvY4AdJVI3oBag-YHh4TJdVB_K0raS2LntI9O4wVF-ETjG7oKhyfjFAwXWBS-u0XJQqH-QqbDEMABq0Thd2GAGifxOP2OSevaFr3mDmfN3MpU8yoCuiXt0epEGq9vXSfFPUkQn"/>
+<div class="relative z-10 px-12 py-8 flex flex-col md:flex-row justify-between items-center w-full gap-8">
+<div>
+<h4 class="font-headline text-3xl font-bold text-on-surface">Obsidian Logic</h4>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-[0.2em] mt-1">Foundational Intelligence Layer</p>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-8 py-3 rounded-full font-bold hover:shadow-[0_0_20px_rgba(255,171,243,0.5)] transition-all flex items-center gap-2 group">
+<span>EXPLORE SUBSTRATE</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-6 left-0 right-0 mx-auto flex justify-around items-center z-50 h-16 w-[90%] max-w-md rounded-full border border-cyan-500/20 bg-slate-900/40 backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] after:content-[''] after:absolute after:inset-0 after:rounded-full after:shadow-[inset_0_0_12px_rgba(0,240,255,0.1)]">
+<div class="flex flex-col items-center justify-center bg-cyan-400/10 text-cyan-400 rounded-full p-3 shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-colors animate-pulse-slow">
+<span class="material-symbols-outlined">explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 p-3 hover:bg-white/5 hover:text-cyan-200 transition-colors">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 p-3 hover:bg-white/5 hover:text-cyan-200 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+</nav>
+</body></html>
