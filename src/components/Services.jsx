@@ -14,7 +14,7 @@ export default function Services() {
   // Parallax speeds vertically
   const y1 = useTransform(scrollYProgress, [0, 1], [-80, 250])
   const y2 = useTransform(scrollYProgress, [0, 1], [300, -150])
-  
+
   // Slide-in from sides symmetrically
   const xLeft = useTransform(scrollYProgress, [0.15, 0.45], [-350, 0])
   const xRight = useTransform(scrollYProgress, [0.15, 0.45], [350, 0])
@@ -24,20 +24,20 @@ export default function Services() {
   const wipeClip = useTransform(scrollYProgress, [0.2, 0.45], ["inset(0% 100% 0% 0%)", "inset(0% 0% 0% 0%)"])
 
   return (
-    <section ref={ref} id="services" className="py-16 px-6 md:px-24 relative bg-transparent overflow-hidden">
-      
+    <section ref={ref} id="services" className="pt-8 pb-16 px-6 md:px-24 relative bg-transparent overflow-hidden">
+
       {/* 3D Extruded Header with Wipe Effect */}
-      <div className="mb-8 md:mb-12 flex justify-center relative w-full h-[80px] md:h-[130px]">
+      <div className="mb-4 md:mb-6 flex justify-center relative w-full h-[60px] md:h-[110px]">
         {/* Outline Text */}
-        <h2 
-          className="text-[5rem] md:text-[10rem] font-black tracking-tighter uppercase text-transparent absolute top-0 z-0"
+        <h2
+          className="text-[4rem] md:text-[8rem] font-black tracking-tighter uppercase text-transparent absolute top-0 z-0"
           style={{ WebkitTextStroke: '2px rgba(255,255,255,0.7)' }}
         >
           SERVICES
         </h2>
         {/* Filled Text (Wiped in) */}
-        <motion.h2 
-          className="text-[5rem] md:text-[10rem] font-black text-white tracking-tighter uppercase drop-shadow-2xl absolute top-0 z-10 w-full text-center"
+        <motion.h2
+          className="text-[4rem] md:text-[8rem] font-black text-white tracking-tighter uppercase drop-shadow-2xl absolute top-0 z-10 w-full text-center"
           style={{ clipPath: wipeClip }}
         >
           SERVICES
@@ -46,21 +46,35 @@ export default function Services() {
 
       <div className="flex flex-col max-w-6xl mx-auto relative z-10">
         {services.map((service, index) => (
-          <motion.div 
+          <motion.div
             key={service.num}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="group relative flex flex-col md:flex-row items-start md:items-center py-6 md:py-8 border-b border-gray-600/50 cursor-pointer overflow-hidden hover:bg-white/5 transition-colors duration-500 px-4 md:px-8 rounded-2xl"
-          >            
-            <div className="w-full md:w-[20%] font-black text-6xl md:text-8xl text-white drop-shadow-lg mb-6 md:mb-0">
+            transition={{ duration: 0.8, delay: index * 0.1, ease: "circOut" }}
+            className="group relative flex flex-col md:flex-row items-start md:items-center py-8 md:py-10 border-b border-white/5 cursor-pointer overflow-hidden transition-all duration-700 hover:px-8"
+          >
+            {/* Background Hover Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-violet-600/10 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-in-out -z-10"></div>
+            
+            <div className="w-full md:w-[15%] font-black text-5xl md:text-7xl text-white/20 group-hover:text-violet-500 transition-colors duration-500 mb-4 md:mb-0 tabular-nums">
               {service.num}
             </div>
-            
-            <div className="w-full md:w-[80%] flex flex-col ml-0 md:ml-12 border-l-0 md:border-l-2 border-primary/50 pl-0 md:pl-12">
-              <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-widest mb-4">{service.title}</h3>
-              <p className="text-gray-400 text-lg md:text-xl font-medium tracking-wide max-w-2xl">{service.desc}</p>
+
+            <div className="w-full md:w-[85%] flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="flex flex-col max-w-xl">
+                <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-[0.1em] mb-2 group-hover:translate-x-2 transition-transform duration-500">
+                  {service.title}
+                </h3>
+                <p className="text-gray-500 text-sm md:text-base font-bold leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                  {service.desc}
+                </p>
+              </div>
+              
+              <div className="hidden md:flex items-center gap-4 opacity-0 group-hover:opacity-100 translate-x-10 group-hover:translate-x-0 transition-all duration-500">
+                <div className="h-[2px] w-12 bg-violet-600"></div>
+                <span className="text-white font-black text-[10px] tracking-widest uppercase">Explore</span>
+              </div>
             </div>
           </motion.div>
         ))}
