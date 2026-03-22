@@ -103,16 +103,18 @@ export default function Projects() {
         className="relative"
         style={{ height: `${projects.length * 100}vh` }}
       >
-        {projects.map((proj, i) => (
-          <Card 
-            key={proj.id} 
-            index={i} 
-            project={proj}
-            scrollY={scrollY}
-            containerTop={containerTop}
-            viewportHeight={viewportHeight}
-          />
-        ))}
+        <div className="sticky top-0 h-screen w-full overflow-hidden">
+          {projects.map((proj, i) => (
+            <Card 
+              key={proj.id} 
+              index={i} 
+              project={proj}
+              scrollY={scrollY}
+              containerTop={containerTop}
+              viewportHeight={viewportHeight}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )
