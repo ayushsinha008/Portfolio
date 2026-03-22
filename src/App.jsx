@@ -42,15 +42,14 @@ function App() {
     }
     requestAnimationFrame(raf)
 
-    lenis.on('scroll', ({ scroll }) => {
-      setScrollY(scroll)
-    })
+    // Removed the global setScrollY state update to fix severe layout thrashing
+    // that caused lag on scroll.
 
     return () => lenis.destroy()
   }, [])
 
   return (
-    <ScrollContext.Provider value={{ scrollY }}>
+    <ScrollContext.Provider value={{ }}>
       <div className="bg-[#0a0a0a] text-foreground min-h-screen selection:bg-primary/50 selection:text-white relative font-sans">
         <BackgroundAssets />
         
