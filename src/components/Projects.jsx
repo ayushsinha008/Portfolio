@@ -9,36 +9,42 @@ const projects = [
 ]
 
 function Card({ project, index, scrollY, containerTop, viewportHeight }) {
-  const segmentSize = 1 / projects.length
-  const start = index * segmentSize
-  const end = (index + 1) * segmentSize
-  const zIndex = 100 - index
-
-  const scrollHeight = (projects.length) * viewportHeight
-  const progress = Math.max(0, Math.min(1, (scrollY - containerTop) / scrollHeight))
+  // We animate over (length - 1) segments
+  const numSegments = projects.length - 1
+  const segmentSize = 1 / numSegments
   
+  // Calculate overall progress of the section
+  const scrollDistance = numSegments * viewportHeight
+  const progress = Math.max(0, Math.min(1, (scrollY - containerTop) / scrollDistance))
+  
+  // Calculate this specific card's sliding progress
+  const start = (index - 1) * segmentSize
   const cardProgress = Math.max(0, Math.min(1, (progress - start) / segmentSize))
   
-  const baseOffset = index * 5
-  const currentOffset = baseOffset + (1 - cardProgress) * 85
-  const scale = 1 - (1 - cardProgress) * 0.08
-  const shadow = cardProgress * 0.6
+  // Calculate position: index 0 is always 10vh, others slide from 100vh to 10 + index*2vh
+  const targetTop = 10 + index * 2
+  const currentOffset = 100 - (100 - targetTop) * cardProgress
+  
+  // Add an extra bottom margin to ensure things don't overlap in a weird way during resize
+  
+  // Calculate scaling: shrink slightly as newer cards stack on top
+  const arrivalProgress = index * segmentSize
+  const progressPastArrival = Math.max(0, progress - arrivalProgress)
+  const scale = 1 - progressPastArrival * 0.04
+  
+  const zIndex = index
 
   return (
     <div 
-      className="h-[85vh] w-full absolute left-0 right-0 flex items-center justify-center"
+      className="h-[80vh] w-full absolute left-0 right-0 flex items-center justify-center top-0 origin-top"
       style={{ 
         zIndex,
-        top: `${currentOffset}vh`,
+        transform: `translateY(${currentOffset}vh) scale(${scale})`,
+        opacity: cardProgress === 0 && index > 0 ? 0 : 1, // Hide until it starts moving
       }}
     >
       <div 
-        className="w-full h-full max-w-[95vw] md:max-w-7xl mx-auto border border-white/20 rounded-[2.5rem] md:rounded-[4rem] bg-[#0d0d0d] p-8 md:p-14 relative flex flex-col justify-between overflow-hidden"
-        style={{ 
-          opacity: 0.6 + cardProgress * 0.4,
-          transform: `scale(${scale})`,
-          boxShadow: `0 ${40 + cardProgress * 60}px ${120 + cardProgress * 80}px rgba(0,0,0,${0.5 + cardProgress * 0.4})`
-        }}
+        className="w-full h-full max-w-[95vw] md:max-w-7xl mx-auto border border-white/20 rounded-[2.5rem] md:rounded-[4rem] bg-[#0d0d0d] p-8 md:p-14 relative flex flex-col justify-between overflow-hidden shadow-2xl"
       >
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-0 relative z-10">
           <motion.div 
@@ -84,15 +90,27 @@ export default function Projects() {
   useEffect(() => {
     const handleResize = () => {
       setViewportHeight(window.innerHeight)
+      if (containerRef.current) {
+        let top = 0;
+        let el = containerRef.current;
+        while (el) {
+          top += el.offsetTop;
+          el = el.offsetParent;
+        }
+        setContainerTop(top)
+      }
     }
     handleResize()
     window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  useEffect(() => {
-    if (containerRef.current) {
-      setContainerTop(containerRef.current.offsetTop)
+    
+    // Also recalculate after a short delay to account for image loading
+    const timer = setTimeout(handleResize, 1000)
+    const timer2 = setTimeout(handleResize, 3000)
+    
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      clearTimeout(timer)
+      clearTimeout(timer2)
     }
   }, [])
 
