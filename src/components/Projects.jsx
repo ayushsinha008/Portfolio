@@ -37,7 +37,7 @@ function Card({ project, index, scrollY, containerTop, viewportHeight }) {
 
   return (
     <div 
-      className="h-[75vh] md:h-[70vh] w-full absolute left-0 right-0 flex items-center justify-center top-0 origin-top"
+      className="h-[60vh] w-full absolute left-0 right-0 flex items-center justify-center top-0 origin-top"
       style={{ 
         zIndex,
         transform: `translateY(${currentOffset}vh) scale(${scale})`,
