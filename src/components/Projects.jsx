@@ -15,6 +15,7 @@ function Card({ project, index, scrollY, containerTop, viewportHeight }) {
   
   // Calculate overall progress of the section
   const scrollDistance = numSegments * viewportHeight
+  
   const progress = Math.max(0, Math.min(1, (scrollY - containerTop) / scrollDistance))
   
   // Calculate this specific card's sliding progress
@@ -114,6 +115,11 @@ export default function Projects() {
     }
   }, [])
 
+  // Calculate JS-driven stickiness to avoid CSS sticky bugs with Lenis/overflows
+  // The section is (length + 1) * 100vh tall. We "stick" for length * 100vh.
+  const maxStickyScroll = projects.length * viewportHeight;
+  const stickyOffset = Math.max(0, Math.min(scrollY - containerTop, maxStickyScroll));
+
   return (
     <section id="projects" className="relative bg-transparent">
       <div 
@@ -121,7 +127,10 @@ export default function Projects() {
         className="relative"
         style={{ height: `${(projects.length + 1) * 100}vh` }}
       >
-        <div className="sticky top-0 h-screen w-full overflow-hidden">
+        <div 
+          className="w-full h-screen overflow-hidden left-0 right-0 will-change-transform"
+          style={{ transform: `translate3d(0, ${stickyOffset}px, 0)` }}
+        >
           {projects.map((proj, i) => (
             <Card 
               key={proj.id} 

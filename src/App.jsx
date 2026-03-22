@@ -54,7 +54,7 @@ function App() {
       <div className="bg-[#0a0a0a] text-foreground min-h-screen selection:bg-primary/50 selection:text-white relative font-sans">
         <BackgroundAssets />
         
-        <div className="relative w-full overflow-x-hidden">
+        <div className="relative w-full overflow-clip">
           <div className="relative z-10 w-full bg-black/50 backdrop-blur-xl">
             <Navbar />
             <Hero />
