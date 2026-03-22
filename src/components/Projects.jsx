@@ -22,22 +22,22 @@ function Card({ project, index, scrollY, containerTop, viewportHeight }) {
   const start = (index - 1) * segmentSize
   const cardProgress = Math.max(0, Math.min(1, (progress - start) / segmentSize))
   
-  // Calculate position: index 0 is always 10vh, others slide from 100vh to 10 + index*2vh
-  const targetTop = 10 + index * 2
-  const currentOffset = 100 - (100 - targetTop) * cardProgress
-  
-  // Add an extra bottom margin to ensure things don't overlap in a weird way during resize
+  // Calculate position: index 0 is always top, others slide up
+  // Increase the gap so the header of the previous card remains visible
+  const headerGap = 18; 
+  const targetTop = 2 + index * headerGap;
+  const currentOffset = 100 - (100 - targetTop) * cardProgress;
   
   // Calculate scaling: shrink slightly as newer cards stack on top
-  const arrivalProgress = index * segmentSize
-  const progressPastArrival = Math.max(0, progress - arrivalProgress)
-  const scale = 1 - progressPastArrival * 0.04
+  const arrivalProgress = index * segmentSize;
+  const progressPastArrival = Math.max(0, progress - arrivalProgress);
+  const scale = 1 - progressPastArrival * 0.05;
   
   const zIndex = index
 
   return (
     <div 
-      className="h-[80vh] w-full absolute left-0 right-0 flex items-center justify-center top-0 origin-top"
+      className="h-[75vh] md:h-[70vh] w-full absolute left-0 right-0 flex items-center justify-center top-0 origin-top"
       style={{ 
         zIndex,
         transform: `translateY(${currentOffset}vh) scale(${scale})`,
