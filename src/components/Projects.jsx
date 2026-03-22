@@ -9,8 +9,8 @@ const projects = [
 ]
 
 function Card({ project, index, scrollY, containerTop, viewportHeight }) {
-  // We animate over (length - 1) segments
-  const numSegments = projects.length - 1
+  // We animate over (length) segments to leave room at the end
+  const numSegments = projects.length
   const segmentSize = 1 / numSegments
   
   // Calculate overall progress of the section
@@ -119,7 +119,7 @@ export default function Projects() {
       <div 
         ref={containerRef}
         className="relative"
-        style={{ height: `${projects.length * 100}vh` }}
+        style={{ height: `${(projects.length + 1) * 100}vh` }}
       >
         <div className="sticky top-0 h-screen w-full overflow-hidden">
           {projects.map((proj, i) => (
